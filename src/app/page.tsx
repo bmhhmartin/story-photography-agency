@@ -1,15 +1,17 @@
-import { StoryblokComponent } from "@storyblok/react";
+import { getStoryblokApi } from '@/lib/storyblok';
+import { StoryblokStory } from '@storyblok/react/rsc';
 
-export default function Home({ blok }) {
-  return (
-    <>
-         <section>
-            {blok.body
-            ? blok.body.map((blok) => (
-                <StoryblokComponent blok={blok} key={blok._uid} />
-                ))
-            : null}
-        </section>
-    </>
-  );
+export default async function Home() {
+const { data } = await fetchData();
+
+return (
+	<div className="page">
+		<StoryblokStory story={data.story} />
+	</div>
+);
+}
+
+export async function fetchData() {
+const storyblokApi = getStoryblokApi();
+return await storyblokApi.get(`cdn/stories/home`, { version: 'draft' });
 }
