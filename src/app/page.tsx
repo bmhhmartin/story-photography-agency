@@ -61,6 +61,17 @@ export async function fetchData() {
                   }
                 ],
                 _uid: 'fallback-grid'
+              },
+              {
+                component: 'blog_card',
+                card_title: 'Latest Photography Tips',
+                card_description: 'Discover professional photography techniques and tips to improve your skills. Learn about lighting, composition, and post-processing.',
+                card_image: {
+                  filename: 'https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?w=400&h=300&fit=crop',
+                  alt: 'Photography Tips'
+                },
+                button_text: 'Read More',
+                _uid: 'fallback-blog-card'
               }
             ]
           }

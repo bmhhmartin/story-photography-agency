@@ -1,4 +1,5 @@
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import StoryblokProvider from "@/components/StoryblokProvider";
 import "./globals.css";
 
@@ -7,10 +8,11 @@ export default function RootLayout({ children }) {
     <StoryblokProvider>
       <html lang="en">
         <body className="min-h-screen bg-gray-50">
-          <main>
-            {children}
-          </main>
-          <Footer />
+            <Header></Header>
+            <main>
+                {children}
+            </main>
+            <Footer />
         </body>
       </html>
     </StoryblokProvider>

@@ -1,6 +1,8 @@
+import BlogCard from "@/components/BlogCard";
 import Feature from "@/components/Feature";
 import Footer from "@/components/Footer";
 import Grid from "@/components/Grid";
+import HeroBanner from "@/components/HeroBanner";
 import Page from "@/components/Page";
 import Teaser from "@/components/Teaser";
 
@@ -18,6 +20,8 @@ storyblokInit({
     feature: Feature,
     teaser: Teaser,
     grid: Grid,
+    BlogCard: BlogCard,
+    HeroBanner: HeroBanner,
     footer: Footer,
   },
 });
