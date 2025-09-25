@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
     return (
       <footer className="bg-gray-900 text-gray-300 py-12">
@@ -5,11 +7,13 @@ export default function Footer() {
           
           {/* Column 1 - About */}
           <div>
-            <div className="text-3xl font-extrabold">
-                <span className="text-red-600">Pixel</span>
-                <span className="text-green-600">Pro</span>
-                <span className="text-gray-600">Agency</span>
-            </div>
+            <Link href="/">
+                <div className="text-3xl font-extrabold">
+                    <span className="text-red-600">Pixel</span>
+                    <span className="text-green-600">Pro</span>
+                    <span className="text-gray-600">Agency</span>
+                </div>
+            </Link>
             <p className="text-sm leading-relaxed">
               Capturing moments that last a lifetime. We specialize in creative photography 
               and storytelling through stunning visuals.

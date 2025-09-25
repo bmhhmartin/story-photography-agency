@@ -1,14 +1,18 @@
+import Link from "next/link";
+
 export default function Header() {
     return (
       <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
           
           {/* Logo */}
-          <div className="text-2xl md:text-3xl font-extrabold tracking-tight">
-            <span className="text-red-600">Pixel</span>
-            <span className="text-green-600">Pro</span>
-            <span className="text-gray-700">Agency</span>
-          </div>
+          <Link href="/">
+            <div className="text-2xl md:text-3xl font-extrabold tracking-tight">
+                <span className="text-red-600">Pixel</span>
+                <span className="text-green-600">Pro</span>
+                <span className="text-gray-700">Agency</span>
+            </div>
+          </Link>
   
           {/* Menu */}
           <nav className="hidden md:flex space-x-8 text-gray-700 font-medium">
