@@ -2,7 +2,7 @@ import {
     StoryblokServerComponent
 } from '@storyblok/react/rsc';
     
-    export default function Page({ blok }) {
+export default function Page({ blok }) {
     return (
         <main>
             {blok.body?.map((nestedBlok) => (
@@ -10,4 +10,4 @@ import {
             ))}
         </main>
     );
-    }
+}

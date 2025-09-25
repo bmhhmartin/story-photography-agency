@@ -1,7 +1,8 @@
 export default function Feature({ blok }) {
     return (
         <div className="feature">
-            <span>{blok.name}</span>
+            <h2>{blok.name || blok.title || 'Feature'}</h2>
+            {blok.description && <p>{blok.description}</p>}
         </div>
     );
-    }
+}

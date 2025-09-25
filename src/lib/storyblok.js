@@ -1,26 +1,26 @@
 import Feature from "@/components/Feature";
+import Footer from "@/components/Footer";
+import Grid from "@/components/Grid";
 import Page from "@/components/Page";
+import Teaser from "@/components/Teaser";
 
-import { apiPlugin, storyblokInit } from "@storyblok/react/rsc";
+import { apiPlugin, getStoryblokApi, storyblokInit } from "@storyblok/react/rsc";
 
 // Check if access token is provided
-const accessToken = process.env.STORYBLOK_DELIVERY_API_ACCESS_TOKEN;
+const accessToken = process.env.STORYBLOK_DELIVERY_API_ACCESS_TOKEN || 'your-preview-token';
 
-if (!accessToken) {
-  throw new Error(
-    "STORYBLOK_DELIVERY_API_ACCESS_TOKEN is required. Please add it to your .env.local file. " +
-    "Get your token from: https://app.storyblok.com/#!/me/account?tab=token"
-  );
-}
-
-export const getStoryblokApi = storyblokInit({
+// Initialize Storyblok
+storyblokInit({
   accessToken,
   use: [apiPlugin],
   components: {
     page: Page,
     feature: Feature,
-  },
-  apiOptions: {
-    endpoint: "https://api.storyblok.com",
+    teaser: Teaser,
+    grid: Grid,
+    footer: Footer,
   },
 });
+
+// Export the API function properly
+export { getStoryblokApi };
