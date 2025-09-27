@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Header() {
     return (
-      <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+      <header className="bg-white shadow-md z-50">
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
           
           {/* Logo */}
@@ -16,11 +16,9 @@ export default function Header() {
   
           {/* Menu */}
           <nav className="hidden md:flex space-x-8 text-gray-700 font-medium">
-            <a href="#" className="hover:text-red-600 transition-colors">Home</a>
-            <a href="#" className="hover:text-red-600 transition-colors">About</a>
-            <a href="#" className="hover:text-red-600 transition-colors">Services</a>
-            <a href="#" className="hover:text-red-600 transition-colors">Portfolio</a>
-            <a href="#" className="hover:text-red-600 transition-colors">Contact</a>
+            <Link href="/" className="hover:text-red-600 transition-colors">Home</Link>
+            <Link href="#" className="hover:text-red-600 transition-colors">About</Link>
+            <Link href="Service" className="hover:text-red-600 transition-colors">Service</Link>
           </nav>
   
           {/* Mobile Menu Icon (optional, placeholder for now) */}
