@@ -1,3 +1,4 @@
+import Blog from "@/components/Blog";
 import BlogCard from "@/components/BlogCard";
 import Feature from "@/components/Feature";
 import Footer from "@/components/Footer";
@@ -9,7 +10,7 @@ import Teaser from "@/components/Teaser";
 import { apiPlugin, getStoryblokApi, storyblokInit } from "@storyblok/react/rsc";
 
 // Check if access token is provided
-const accessToken = process.env.STORYBLOK_DELIVERY_API_ACCESS_TOKEN || 'your-preview-token';
+const accessToken = process.env.STORYBLOK_ACCESS_TOKEN || 'your-preview-token';
 
 // Initialize Storyblok
 storyblokInit({
@@ -20,9 +21,10 @@ storyblokInit({
     feature: Feature,
     teaser: Teaser,
     grid: Grid,
+    blog: Blog,
     BlogCard: BlogCard,
     HeroBanner: HeroBanner,
-    footer: Footer,
+    Footer: Footer,
   },
 });
 
