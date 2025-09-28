@@ -9,7 +9,7 @@ interface StoryblokResponse {
         body: Array<{
           component: string;
           _uid: string;
-          [key: string]: any;
+          [key: string]: unknown;
         }>;
         _uid: string;
       };
@@ -27,7 +27,7 @@ export default async function Home() {
   );
 }
 
-export async function fetchData(): Promise<StoryblokResponse> {
+async function fetchData(): Promise<StoryblokResponse> {
   const storyblokApi = getStoryblokApi();
   try {
     return await storyblokApi.get(`cdn/stories/homepage`, { version: 'draft' });
