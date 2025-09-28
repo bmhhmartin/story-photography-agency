@@ -9,7 +9,7 @@ interface StoryblokResponse {
         body: Array<{
           component: string;
           _uid: string;
-          [key: string]: any;
+          [key: string]: unknown;
         }>;
         _uid: string;
       };
