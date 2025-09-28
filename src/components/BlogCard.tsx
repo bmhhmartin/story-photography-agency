@@ -16,8 +16,8 @@ export default function BlogCard({ blok }: BlogCardProps) {
             {blok.card_image && (
                 <div className="relative h-48 overflow-hidden">
                     <img 
-                        src={blok.card_image.filename || blok.card_image} 
-                        alt={blok.card_image.alt || blok.card_title || 'Blog post image'} 
+                        src={typeof blok.card_image === 'string' ? blok.card_image : blok.card_image.filename || ''} 
+                        alt={typeof blok.card_image === 'string' ? blok.card_title || 'Blog post image' : blok.card_image.alt || blok.card_title || 'Blog post image'} 
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                     />
                 </div>
