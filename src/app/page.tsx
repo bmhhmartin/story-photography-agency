@@ -33,5 +33,25 @@ async function fetchData(): Promise<StoryblokResponse> {
     return await storyblokApi.get(`cdn/stories/homepage`, { version: 'draft' });
   } catch (error) {
     console.error('Error fetching story:', error);
+    // Return a fallback story structure
+    return {
+      data: {
+        story: {
+          content: {
+            component: 'page',
+            body: [
+              {
+                component: 'teaser',
+                headline: 'Welcome to Our Photography Agency',
+                description: 'Professional photography services for all your needs',
+                cta_text: 'Get Started',
+                _uid: 'fallback-homepage-teaser'
+              }
+            ],
+            _uid: 'fallback-homepage-page'
+          }
+        }
+      }
+    };
   }
 }
