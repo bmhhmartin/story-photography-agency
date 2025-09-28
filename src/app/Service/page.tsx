@@ -17,17 +17,7 @@ interface StoryblokResponse {
   };
 }
 
-export default async function Service() {
-  const { data } = await fetchServiceData();
-
-  return (
-    <div className="page">
-      <StoryblokServerComponent blok={data.story.content} />
-    </div>
-  );
-}
-
-export async function fetchServiceData(): Promise<StoryblokResponse> {
+async function fetchServiceData(): Promise<StoryblokResponse> {
   const storyblokApi = getStoryblokApi();
   try {
     return await storyblokApi.get(`cdn/stories/service`, { version: 'draft' });
@@ -109,4 +99,14 @@ export async function fetchServiceData(): Promise<StoryblokResponse> {
       }
     };
   }
+}
+
+export default async function Service() {
+  const { data } = await fetchServiceData();
+
+  return (
+    <div className="page">
+      <StoryblokServerComponent blok={data.story.content} />
+    </div>
+  );
 }
