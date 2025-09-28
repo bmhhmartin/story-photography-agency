@@ -1,4 +1,18 @@
-export default function HeroBanner({ blok }) {
+interface HeroBannerProps {
+  blok: {
+    title?: string;
+    descripiton?: string;
+    buttonText?: string;
+    buttonURL?: {
+      url: string;
+    };
+    backgroundImage?: {
+      filename: string;
+    };
+  };
+}
+
+export default function HeroBanner({ blok }: HeroBannerProps) {
     return (
       <section
         className="relative w-full h-[80vh] flex items-center justify-center text-center text-white"

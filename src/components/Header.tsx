@@ -17,7 +17,6 @@ export default function Header() {
           {/* Menu */}
           <nav className="hidden md:flex space-x-8 text-gray-700 font-medium">
             <Link href="/" className="hover:text-red-600 transition-colors">Home</Link>
-            <Link href="#" className="hover:text-red-600 transition-colors">About</Link>
             <Link href="Service" className="hover:text-red-600 transition-colors">Service</Link>
           </nav>
   

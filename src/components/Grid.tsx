@@ -1,4 +1,14 @@
-export default function Grid({ blok }) {
+interface GridProps {
+  blok: {
+    title?: string;
+    columns?: Array<{
+      name?: string;
+      [key: string]: unknown;
+    }>;
+  };
+}
+
+export default function Grid({ blok }: GridProps) {
     return (
         <div className="grid-section py-16 px-6">
             <div className="container">
